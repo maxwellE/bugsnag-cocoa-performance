@@ -18,6 +18,8 @@ jobs:
         fetch-depth: 100
     - name: Build
       run: xcodebuild -scheme BugsnagPerformance-iOS -destination generic/platform=iOS -configuration Release -quiet -derivedDataPath $PWD/DerivedData.new VALID_ARCHS=arm64
+    - name: BazelBuild
+      run: bazelisk test //Tests/... --test_output=errors --cpu=ios_sim_arm64
     - name: Install dependencies
       run: brew install bloaty && gem install danger
     - name: Run danger

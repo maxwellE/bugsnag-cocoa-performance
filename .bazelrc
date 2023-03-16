@@ -1,0 +1,2 @@
+build --apple_platform_type=ios
+build --incompatible_disallow_empty_glob
