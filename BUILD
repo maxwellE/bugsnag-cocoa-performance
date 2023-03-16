@@ -1,3 +1,13 @@
+includes = [
+    "Sources/BugsnagPerformance",
+    "Sources/BugsnagPerformance/Private",
+    "Sources/BugsnagPerformance/Private/Instrumentation",
+    "Sources/BugsnagPerformance/Private/Instrumentation/NetworkInstrumentation",
+    "Sources/BugsnagPerformance/Public",
+    "Sources/BugsnagPerformance/include",
+    "Sources/BugsnagPerformance/include/BugsnagPerformance",
+]
+
 objc_library(
     name = "BugsnagPerformanceCXX",
     srcs = glob([
@@ -8,15 +18,7 @@ objc_library(
         "-std=c++14",
         "-w",
     ],
-    includes = [
-        "Sources/BugsnagPerformance",
-        "Sources/BugsnagPerformance/Private",
-        "Sources/BugsnagPerformance/Private/Instrumentation",
-        "Sources/BugsnagPerformance/Private/Instrumentation/NetworkInstrumentation",
-        "Sources/BugsnagPerformance/Public",
-        "Sources/BugsnagPerformance/include",
-        "Sources/BugsnagPerformance/include/BugsnagPerformance",
-    ],
+    includes = includes,
 )
 
 objc_library(
@@ -41,15 +43,7 @@ objc_library(
     copts = [
         "-w",
     ],
-    includes = [
-        "Sources/BugsnagPerformance",
-        "Sources/BugsnagPerformance/Private",
-        "Sources/BugsnagPerformance/Private/Instrumentation",
-        "Sources/BugsnagPerformance/Private/Instrumentation/NetworkInstrumentation",
-        "Sources/BugsnagPerformance/Public",
-        "Sources/BugsnagPerformance/include",
-        "Sources/BugsnagPerformance/include/BugsnagPerformance",
-    ],
+    includes = includes,
     module_name = "BugsnagPerformance",
     sdk_dylibs = [
         "z",
